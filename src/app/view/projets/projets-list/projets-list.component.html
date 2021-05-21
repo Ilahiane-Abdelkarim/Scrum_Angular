@@ -1,0 +1,10 @@
+<div class="projects_container">
+    <div class="projects_holder">
+      <h5>List des projets</h5>
+      <button class="close-popup" (click)="closeListProjets()"><i class="fa fa-times-circle"></i></button>
+      <div class="project_container " [ngClass]="lp.color"  *ngFor="let lp of listProjets,index as i">
+        <div class="project_container_title">{{lp.ref}}</div>
+        <div class="project_container_text">{{lp.libelle}}</div>
+      </div>
+    </div>
+  </div>        

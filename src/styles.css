@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~font-awesome/css/font-awesome.min.css";
+
+html {
+  /* min-height: 100vh; */
+  height: auto;
+}
+body {
+  min-height: 100vh;
+  background-color: #009688;
+  padding-top: 56px;
+  color: #ffffff;
+}
