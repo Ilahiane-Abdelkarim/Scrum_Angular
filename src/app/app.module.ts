@@ -33,6 +33,7 @@ import { MembreEquipesListComponent } from './view/membre-equipes/membre-equipes
 import { HomeComponent } from './view/pages/home/home.component';
 import { NotFoundComponent } from './view/pages/not-found/not-found.component';
 import { MenuHeaderComponent } from './view/menus/menu-header/menu-header.component';
+import { LoginComponent } from './view/pages/login/login.component';
 
 export const projetsComponents = [ProjetsComponent,ProjetsCreateComponent,ProjetsListComponent];
 export const clientsComponent = [ClientsComponent,ClientsCreateComponent,ClientsListComponent];
@@ -59,6 +60,7 @@ export const membreEquipesComponent = [MembreEquipesComponent,MembreEquipesCreat
     HomeComponent,
     NotFoundComponent,
     MenuHeaderComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

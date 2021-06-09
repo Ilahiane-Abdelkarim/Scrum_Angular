@@ -11,19 +11,21 @@ import { ProjetsComponent } from './view/projets/projets.component';
 import { TachesComponent } from './view/taches/taches.component';
 import { HomeComponent } from './view/pages/home/home.component';
 import { NotFoundComponent } from './view/pages/not-found/not-found.component';
+import { LoginComponent } from './view/pages/login/login.component';
 
 export const compoments = [ProjetsComponent,ClientsComponent,CategoriesComponent,CollaborateursComponent,EquipesComponent,LotsComponent,TachesComponent,EtatTachesComponent,MembreEquipesComponent];
 const routes: Routes = [
   {path:'', component:HomeComponent},
-  {path:'projets-component', component:compoments[0]},
-  {path:'clients-component', component:compoments[1]},
-  {path:'categories-component', component:compoments[2]},
-  {path:'collaborateurs-component', component:compoments[3]},
-  {path:'equipes-component', component:compoments[4]},
-  {path:'lots-component', component:compoments[5]},
-  {path:'taches-component', component:compoments[6]},
-  {path:'etat-taches-component', component:compoments[7]},
-  {path:'membre-equipes-component', component:compoments[8]},
+  // {path:'projets-component', component:compoments[0]},
+  // {path:'clients-component', component:compoments[1]},
+  // {path:'categories-component', component:compoments[2]},
+  // {path:'collaborateurs-component', component:compoments[3]},
+  // {path:'equipes-component', component:compoments[4]},
+  // {path:'lots-component', component:compoments[5]},
+  // {path:'taches-component', component:compoments[6]},
+  // {path:'etat-taches-component', component:compoments[7]},
+  // {path:'membre-equipes-component', component:compoments[8]},
+  {path:'login', component:LoginComponent},
   {path:'**', component:NotFoundComponent}
 
 ];

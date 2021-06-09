@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg ">
+<nav class="navbar navbar-expand ">
     
 
   
@@ -8,38 +8,21 @@
           <a class="nav-link scrum-header-link" routerLink=""><i class="fa fa-home"></i></a>
         </li>
         <li class="nav-item">
-          <button class="nav-link scrum-header-link" (click)="openListProjets()"><i class="fa fa-tasks"></i><span>Projets</span></button>
+          <button class="nav-link scrum-header-link" (click)="openProjetList = !openProjetList"><i class="fa fa-tasks"></i><span class="d-none d-md-inline-block">Projets</span></button>
         </li>
-        <app-projets-list [ngClass]="{'d-none':boolProjets === false}"></app-projets-list>
-
-        <!-- <li class="nav-item">
-            <a class="nav-link scrum-header-link" routerLink="clients-component" routerLinkActive="active">Clients</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link scrum-header-link" routerLink="categories-component" routerLinkActive="active">Categories</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link scrum-header-link" routerLink="collaborateurs-component" routerLinkActive="active">Collaborateurs</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link scrum-header-link" routerLink="equipes-component" routerLinkActive="active">Equipes</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link scrum-header-link" routerLink="lots-component" routerLinkActive="active">Lots</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link scrum-header-link" routerLink="taches-component" routerLinkActive="active">Taches</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link scrum-header-link" routerLink="etat-taches-component" routerLinkActive="active">Etat taches</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link scrum-header-link" routerLink="membre-equipes-component" routerLinkActive="active">Membre equipes</a>
-        </li> -->
+        <app-projets-list [ngClass]="{'d-none':openProjetList === false}"></app-projets-list>
+        <div class="menu_list" [ngClass]="{'d-none':primaryMenuB === false}">
+          <div class="menu_line">
+            <h5>colors:</h5>
+            <div class="menu_btn_container d-flex align-items-start flex-wrap" >
+              <div class="menu_btn_box" [ngStyle]="{'background-color' : '#'+c.code}" *ngFor="let c of colors,index as i"><div></div></div>
+            </div>
+          </div>
+        </div>
       </ul>
     </div>
-    <a class="nav-link scrum-header-link3" routerLink="" routerLinkActive="active">scrum</a>  
-    <a class="nav-link scrum-header-link scrum-header-link2" routerLink="" routerLinkActive="active"><i class="fa fa-plus"></i></a>     
-    <a class="nav-link scrum-header-link scrum-header-link2" routerLink="" routerLinkActive="active"><i class="fa fa-user"></i></a>        
+    <a class="nav-link scrum-header-link3"  routerLinkActive="active">scrum</a>  
+    <a class="nav-link scrum-header-link scrum-header-link2"  (click)="primaryMenuB = !primaryMenuB"><i class="fa fa-plus"></i></a>     
+    <a class="nav-link scrum-header-link scrum-header-link2" routerLink="login" routerLinkActive="active"><i class="fa fa-user"></i></a>        
   </nav>
   

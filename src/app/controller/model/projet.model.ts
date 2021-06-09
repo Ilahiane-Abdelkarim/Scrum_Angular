@@ -7,4 +7,5 @@ export class Projet {
     public code:string;
     public client:Client;
     public avancement:string;
+    public color:string;
 }

@@ -4,9 +4,9 @@ export class Lot {
     public id:number ;
 
     public code:string ;
-
+    
     public libelle:string ;
-
+    
     public projet:Projet ;
 
     public categorie:Categorie ;

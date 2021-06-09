@@ -1,0 +1,50 @@
+.lot_box {
+  width: 272px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 8px 8px;
+  border-radius: 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  color: #172b4d;
+}
+.lot_box_create:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.lot_box-title {
+  margin-bottom: 0;
+  font-size: 15px;
+  line-height: 15px;
+  font-weight: 600;
+  text-align: left;
+  margin-bottom: 0;
+  text-transform: capitalize;
+}
+.lot_box-text {
+  margin-bottom: 0;
+  font-size: 13px;
+  line-height: 15px;
+  font-weight: 400;
+  text-align: left;
+  margin-bottom: 0;
+  text-transform: capitalize;
+  padding: 3px 0;
+}
+/* app-lots-create {
+  max-width: 272px;
+  width: 100%;
+  margin: 0 4px;
+} */
+.lots_container {
+  padding: 0 4px;
+  height: calc(100vh - 56px);
+  /* width: calc(100% - 10px); */
+  overflow: auto;
+  /* overflow-x: scroll; */
+}
+.list-wrapper {
+  width: 272px;
+  margin: 0 4px;
+  height: 100%;
+}

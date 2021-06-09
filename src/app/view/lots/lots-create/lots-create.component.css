@@ -1,0 +1,20 @@
+.lot_box_create {
+  width: 272px;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 12px 8px;
+  border-radius: 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.lot_box_create:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.lot_box_create h5 {
+  margin-bottom: 0;
+  font-size: 15px;
+  line-height: 15px;
+  font-weight: 600;
+  text-align: left;
+}
