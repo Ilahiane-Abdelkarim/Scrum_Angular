@@ -1,10 +1,23 @@
+.taches_container {
+  margin: 0 auto;
+  width: calc(100% - 14px);
+}
 .tache_box {
+  cursor: pointer;
   margin-top: 6px;
   background-color: rgba(255, 255, 255, 1);
-  padding: 4px 6px;
+  /* padding: 4px 6px; */
   border-radius: 3px;
   -webkit-transition-duration: 0.2s;
   transition-duration: 0.2s;
+  max-width: 280px;
+  width: 100%;
+  margin-right: 20px;
+  position: relative;
+}
+.tache_box h5 {
+  color: #172b4d;
+  font-size: 15px;
 }
 .tache_box p {
   text-align: left;
@@ -30,10 +43,75 @@
   padding-bottom: 2px;
 }
 .tache_box:hover {
-  background-color: #f4f5f7;
+  background-color: rgba(255, 255, 255, 0.7);
   border-bottom-color: rgba(9, 30, 66, 0.25);
 }
 .tache_box:hover button {
-  color: #172b4d;
-  background-color: #e2e4e7;
+  color: #009688;
+  background-color: #fff;
+}
+.tache_box button {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(173, 181, 189, 0.8);
+  color: #495057;
+  font-size: 35px;
+  opacity: 0;
+  /* transition-duration: 0.3s; */
+}
+.tache_box:hover button {
+  opacity: 1;
+}
+.p-relative {
+  border-bottom: 1px solid #e0e0e1;
+  padding: 6px 6px 0px 6px;
+  overflow: hidden;
+}
+.p-relative h5 {
+  color: #313131;
+  width: 100%;
+  float: left;
+  /* padding-top: 5px; */
+}
+.p-relative span {
+  /* width: 60px; */
+  color: #313131;
+  background-color: #d8d9db;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  /* display: block; */
+  padding: 2px 4px;
+  text-align: center;
+  margin-left: auto;
+  min-height: 20px;
+  float: left;
+}
+.p-relative .span {
+  float: right;
+}
+.p-relative .redBg {
+  background-color: #ef7564;
+  color: #fff;
+}
+.p-relative .greenBg {
+  background-color: #7bc86c;
+  color: #fff;
+}
+.p-relative .blueBg {
+  background-color: #5ba4cf;
+  color: #fff;
+}
+.tache_box p {
+  color: #313131;
+  padding: 4px 6px 8px 6px;
+  width: 280px;
+  height: 34px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }

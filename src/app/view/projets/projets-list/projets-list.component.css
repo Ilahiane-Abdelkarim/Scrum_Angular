@@ -35,10 +35,14 @@
   line-height: 14px;
   font-weight: 700;
   padding-top: 11px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .project_container_text {
   text-align: left;
   width: calc(100% - 36px);
+  width: 228px;
   height: 36px;
   display: inline-block;
   color: #311b92;
@@ -48,6 +52,9 @@
   line-height: 14px;
   font-weight: 700;
   padding-top: 11px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .project_container .project_container_title {
   -webkit-transition-duration: 0.1s;

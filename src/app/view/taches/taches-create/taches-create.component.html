@@ -1,1 +1,21 @@
-<button class="add_lot-btn"><span>+</span> Ajouter une tache</button>
+<button class="add_lot-btn"  (click)="popUpAdd = !popUpAdd"><span>+</span> Ajouter une tache</button>
+<div class="bg-popup greenBg" [ngClass]="{'active ' : popUpAdd}">
+<div class="btn" (click)="popUpAdd = !popUpAdd"></div>
+    <div class="form">
+        <div class="clr-brd">
+            <div class="close-btn-circle" (click)="popUpAdd = !popUpAdd"><i class="fa fa-times" aria-hidden="true"></i></div>
+            <h3>
+                <select name="" id="" #t (change)="changeEtat(t.value)">
+                    <option [value]="et.code" *ngFor="let et of etatTaches,index as i">{{et.libelle}}</option>
+                </select>
+            </h3>
+        </div>
+        <div class="taches-container">
+        
+            <span class="edit-btn save-btn" (click)="save()">save <i class="fa fa-floppy-o" aria-hidden="true"></i></span>
+            <input type="text" name="code" id="code" #codeTachVal (keyup)="saveTacheCode(codeTachVal.value)" placeholder="Nom de tache..." >
+            <h3>Description:</h3>
+            <textarea name="description" id="description" #libelleTachVal (keyup)="saveTacheLibelle(libelleTachVal.value)" placeholder="La description..."></textarea>
+        </div>
+    </div>
+</div>

@@ -301,9 +301,9 @@
   right: 0;
 }
 /* input:checked ~ .menu_btn_box div {
-    border: 1px solid #494848;
-    opacity: 1;
-  } */
+  border: 1px solid #494848;
+  opacity: 1;
+} */
 .menu_btn_box input:checked ~ .ok {
   border: 1px solid #494848;
   opacity: 1;

@@ -1,0 +1,9 @@
+<ul class="projet-props d-flex flex-wrap">
+   <li class="d-flex align-items-center"><h3>Projet: {{projet.ref}}</h3></li>
+   <li class="d-flex align-items-center progress"><h4>Progress: <span>{{projet.avancement}}%</span></h4></li>
+   <li class="d-flex align-items-center"><h4>About: {{projet.libelle}}</h4></li>
+   <li class="d-flex align-items-center"><h4>Client: {{client.nom+" "+client.prenom}}</h4></li>
+   <li><app-projets-update></app-projets-update></li>
+</ul>
+
+<app-taches-list>

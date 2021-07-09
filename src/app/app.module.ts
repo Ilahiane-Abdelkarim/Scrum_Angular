@@ -34,6 +34,11 @@ import { HomeComponent } from './view/pages/home/home.component';
 import { NotFoundComponent } from './view/pages/not-found/not-found.component';
 import { MenuHeaderComponent } from './view/menus/menu-header/menu-header.component';
 import { LoginComponent } from './view/pages/login/login.component';
+import {HttpClientModule} from '@angular/common/http';
+import { ProjetDetailComponent } from './view/projets/projet-detail/projet-detail.component';
+import { TachesUpdateComponent } from './view/taches/taches-update/taches-update.component';
+import { ProjetsUpdateComponent } from './view/projets/projets-update/projets-update.component';
+import { ClientsUpdateComponent } from './view/clients/clients-update/clients-update.component';
 
 export const projetsComponents = [ProjetsComponent,ProjetsCreateComponent,ProjetsListComponent];
 export const clientsComponent = [ClientsComponent,ClientsCreateComponent,ClientsListComponent];
@@ -61,9 +66,14 @@ export const membreEquipesComponent = [MembreEquipesComponent,MembreEquipesCreat
     NotFoundComponent,
     MenuHeaderComponent,
     LoginComponent,
+    ProjetDetailComponent,
+    TachesUpdateComponent,
+    ProjetsUpdateComponent,
+    ClientsUpdateComponent,
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   providers: [],

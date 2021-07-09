@@ -1,1 +1,29 @@
-<p>projets-create works!</p>
+<!-- <button class="add_lot-btn"  (click)="popUpSave = !popUpSave"><span><i class="fa fa-pencil" aria-hidden="true"></i></span> Modefier</button> -->
+<div [ngClass]="{'active ' : popUpSave}" class="bg-popup greenBg">
+    <div class="btn" (click)="popUpSave = !popUpSave"></div>
+    <div class="form">
+        <div class="clr-brd">
+            <div class="close-btn-circle" (click)="popUpSave = !popUpSave"><i class="fa fa-times" aria-hidden="true"></i></div>
+            <h3>
+                Ajouter Projet
+            </h3>
+        </div>
+        <div class="taches-container">
+            <span class="edit-btn {{updateActive ? 'edit':'anuler'}}" (click)="updateActive= !updateActive">{{updateActive ? 'Ajouter':'Anuler'}}  <i class="fa fa-pencil" aria-hidden="true"></i></span>
+            <span class="edit-btn save-btn {{updateActive ? 'd-none':''}}" (click)="save(codeSave.value,refSave.value,libelleSave.value,avancementSave.value)">save <i class="fa fa-floppy-o" aria-hidden="true"></i></span>
+        
+            <h3>code: <input #codeSave type="text" placeholder="code..."></h3>
+            <h3>ref: <input #refSave type="text" placeholder="ref..."></h3>
+            <h3>libelle: <input #libelleSave type="text" placeholder="libelle..."></h3>
+            <h3>avancement: <input #avancementSave type="text" placeholder="avancement..."></h3>
+            <h3>color: <br>
+                <div class="menu_btn_container d-flex align-items-start flex-wrap" >
+                    <label for="{{c.ref}}" class="menu_btn_box" [ngStyle]="{'background-color' : '#'+c.code}" *ngFor="let c of colors,index as i">
+                        <input type="radio" class="hide-inp"  [id]="c.code+'1'" name="vehicle1" value="{{c.ref}}">
+                        <div class="ok" (click)="getColor(c.ref)"></div>
+                    </label>
+                  </div>
+            </h3>
+        </div>
+    </div>
+</div>

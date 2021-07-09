@@ -12,6 +12,7 @@ import { TachesComponent } from './view/taches/taches.component';
 import { HomeComponent } from './view/pages/home/home.component';
 import { NotFoundComponent } from './view/pages/not-found/not-found.component';
 import { LoginComponent } from './view/pages/login/login.component';
+import { ProjetDetailComponent } from './view/projets/projet-detail/projet-detail.component';
 
 export const compoments = [ProjetsComponent,ClientsComponent,CategoriesComponent,CollaborateursComponent,EquipesComponent,LotsComponent,TachesComponent,EtatTachesComponent,MembreEquipesComponent];
 const routes: Routes = [
@@ -25,6 +26,7 @@ const routes: Routes = [
   // {path:'taches-component', component:compoments[6]},
   // {path:'etat-taches-component', component:compoments[7]},
   // {path:'membre-equipes-component', component:compoments[8]},
+  {path:'projet/:projetId', component:ProjetDetailComponent},
   {path:'login', component:LoginComponent},
   {path:'**', component:NotFoundComponent}
 

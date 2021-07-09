@@ -2,9 +2,10 @@
     <div class="projects_holder">
       <h5>List des projets</h5>
       <button class="close-popup" (click)="openProjetList = !openProjetList"><i class="fa fa-times-circle"></i></button>
-      <div class="project_container " [ngClass]="lp.color"  *ngFor="let lp of projets,index as i">
-        <div class="project_container_title">{{lp.ref}}</div>
+      <div class="project_container " [ngClass]="lp.color"  *ngFor="let lp of projets,index as i" [routerLink]="['/projet', lp.code]" routerLinkActive="active" (click)="findByCode(i)" >
+        <div class="project_container_title">{{lp.ref.charAt(0)}}</div>
         <div class="project_container_text">{{lp.libelle}}</div>
       </div>
     </div>
   </div>            
+  <!-- (click)="findByCode(i)" -->

@@ -4,10 +4,11 @@
   
     <div class=" navbar-collapse" >
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
+        
+        <li class="nav-item {{user ? '':'d-none'}}" >
           <a class="nav-link scrum-header-link" routerLink=""><i class="fa fa-home"></i></a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item  {{user ? '':'d-none'}}">
           <button class="nav-link scrum-header-link" (click)="openProjetList = !openProjetList"><i class="fa fa-tasks"></i><span class="d-none d-md-inline-block">Projets</span></button>
         </li>
         <app-projets-list [ngClass]="{'d-none':openProjetList === false}"></app-projets-list>
@@ -22,7 +23,12 @@
       </ul>
     </div>
     <a class="nav-link scrum-header-link3"  routerLinkActive="active">scrum</a>  
-    <a class="nav-link scrum-header-link scrum-header-link2"  (click)="primaryMenuB = !primaryMenuB"><i class="fa fa-plus"></i></a>     
-    <a class="nav-link scrum-header-link scrum-header-link2" routerLink="login" routerLinkActive="active"><i class="fa fa-user"></i></a>        
+    <a class="nav-link scrum-header-link scrum-header-link2  {{user ? '':'d-none'}}"  (click)="popUpSave = !popUpSave"><i class="fa fa-plus"></i></a> 
+    <a class="nav-link scrum-header-link scrum-header-link2 px-2  {{user ? 'd-none':''}}"  (click)="popUpSave2 = !popUpSave2">Inscription</a> 
+    <!-- <a class="nav-link scrum-header-link scrum-header-link2"  (click)="primaryMenuB = !primaryMenuB"><i class="fa fa-plus"></i></a>      -->
+    <a class="nav-link scrum-header-link scrum-header-link2  {{user ? 'd-none':''}}" routerLink="login" routerLinkActive="active"><i class="fa fa-user"></i></a>
+    <a class="nav-link scrum-header-link scrum-header-link2  {{user ? '':'d-none'}}" (click)="logOut()"><i class="fa fa-sign-out" aria-hidden="true"></i></a>     
+    <app-projets-create></app-projets-create> 
+    <app-clients-create></app-clients-create>  
   </nav>
   

@@ -5,22 +5,23 @@ import {EtatTache} from '../../../controller/model/etat-tache.model';
 import {EtatTacheService} from '../../../controller/service/etat-tache.service';
 
 @Component({
-  selector: 'app-taches-create',
-  templateUrl: './taches-create.component.html',
-  styleUrls: ['./taches-create.component.css']
+  selector: 'app-taches-update',
+  templateUrl: './taches-update.component.html',
+  styleUrls: ['./taches-update.component.css']
 })
-export class TachesCreateComponent implements OnInit {
+export class TachesUpdateComponent implements OnInit {
 
   constructor(private tacheService:TacheService, private etatTacheService:EtatTacheService) { }
 
   ngOnInit(): void {
     this.etatTacheService.findAll();
   }
-  get popUpAdd(): boolean {
-    return this.tacheService.popUpAdd;
+  private bo:boolean = true;
+  get popUpUpdate(): boolean {
+    return this.tacheService.popUpUpdate;
   }
-  set popUpAdd(p:boolean)  {
-    this.tacheService.popUpAdd = p;
+  set popUpUpdate(p:boolean)  {
+    this.tacheService.popUpUpdate = p;
   }
   get tache(): Tache {
     return this.tacheService.tache;
@@ -37,22 +38,33 @@ export class TachesCreateComponent implements OnInit {
   get etatTaches(): Array<EtatTache> {
     return this.etatTacheService.etatTaches;
   }
-  /**/
-  private etatCode:string = this.etatTacheService.etatTache.code;
-  private tacheCode:string = this.tacheService.tache.code;
-  private tacheLibelle:string = this.tacheService.tache.libelle;
+
+  get updateActive(): boolean {
+    return this.bo;
+  }
+  set updateActive(bol:boolean)  {
+    this.bo = bol;
+  }
   public changeEtat(et){
     this.etatCode = et;
   }
-  public saveTacheCode(value){
+  public saveTacheCode(value,v2){
     this.tacheCode = value;
+    this.tacheCodeOld = v2;
   }
   public saveTacheLibelle(value){
     this.tacheLibelle = value;
   }
-  public save(){
-    this.tacheService.save(this.tacheCode,this.tacheLibelle,this.etatCode);
-    this.tacheService.popUpAdd = false;
-  }
+  private etatCode:string = this.etatTacheService.etatTache.code;
+  private tacheCode:string = this.tacheService.tache.code;
+  private tacheCodeOld:string = this.tacheService.tache.code;
+  private tacheLibelle:string = this.tacheService.tache.libelle;
 
+  public update(){
+    this.tacheService.update(this.tacheCode,this.tacheLibelle,this.etatCode);
+  }
+  public delete(){
+    this.tacheService.delete();
+    this.tacheService.popUpUpdate = false;
+  }
 }

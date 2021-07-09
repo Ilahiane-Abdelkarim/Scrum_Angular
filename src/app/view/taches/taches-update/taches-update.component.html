@@ -1,0 +1,25 @@
+<div [ngClass]="{'active ' : popUpUpdate, 'redBg':etatTache.libelle === 'À faire',
+'greenBg':etatTache.libelle === 'Terminé',
+'blueBg':etatTache.libelle === 'En cours'}" class="bg-popup">
+    <div class="btn" (click)="popUpUpdate = !popUpUpdate"></div>
+    <div class="form">
+        <div class="clr-brd">
+            <div class="close-btn-circle" (click)="popUpUpdate = !popUpUpdate"><i class="fa fa-times" aria-hidden="true"></i></div>
+            <h3>
+                <!-- <input type="text" name="code" id="code" [value]="etatTache.code" [disabled]="updateActive"> -->
+                <select name="" id="" [disabled]="updateActive" #t (change)="changeEtat(t.value)">
+                    <option [selected]="et.code == etatTache.code"  [value]="et.code" *ngFor="let et of etatTaches,index as i">{{et.libelle}}</option>
+                </select>
+            </h3>
+        </div>
+        <div class="taches-container">
+            <span class="edit-btn {{updateActive ? 'edit':'anuler'}}" (click)="updateActive= !updateActive">{{updateActive ? 'Edit':'Anuler'}}  <i class="fa fa-pencil" aria-hidden="true"></i></span>
+            <span class="edit-btn save-btn {{updateActive ? 'd-none':''}}" (click)="update()">save <i class="fa fa-floppy-o" aria-hidden="true"></i></span>
+            <span class="edit-btn save-btn {{updateActive ? 'anuler delete':'d-none'}}" (click)="delete()">Supprimer  <i class="fa fa-trash" aria-hidden="true"></i></span>
+            <input type="text" name="code" id="code" #codeTachVal [value]="tache.code" [disabled]="updateActive" (keyup)="saveTacheCode(codeTachVal.value,tache.code)" >
+            <h3>Description:</h3>
+            <textarea name="description" id="description" #libelleTachVal (keyup)="saveTacheLibelle(libelleTachVal.value)" [disabled]="updateActive" >{{tache.libelle}}</textarea>
+        </div>
+    </div>
+</div>
+<!-- bg-popup (dblclick)="UpdateTach()" (click)="UpdateTach()"-->

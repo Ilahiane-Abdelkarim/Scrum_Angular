@@ -1,0 +1,29 @@
+<button class="add_lot-btn"  (click)="popUpUpdate = !popUpUpdate"><span><i class="fa fa-pencil" aria-hidden="true"></i></span> Modefier</button>
+<div [ngClass]="{'active ' : popUpUpdate}" class="bg-popup greenBg">
+    <div class="btn" (click)="popUpUpdate = !popUpUpdate"></div>
+    <div class="form">
+        <div class="clr-brd">
+            <div class="close-btn-circle" (click)="popUpUpdate = !popUpUpdate"><i class="fa fa-times" aria-hidden="true"></i></div>
+            <h3>
+                {{projet.code}}
+            </h3>
+        </div>
+        <div class="taches-container">
+            <span class="edit-btn {{updateActive ? 'edit':'anuler'}}" (click)="updateActive= !updateActive">{{updateActive ? 'Edit':'Anuler'}}  <i class="fa fa-pencil" aria-hidden="true"></i></span>
+            <span class="edit-btn save-btn {{updateActive ? 'd-none':''}}" (click)="update(codeV.value,ref.value,libelle.value,avancement.value)">save <i class="fa fa-floppy-o" aria-hidden="true"></i></span>
+            <span class="edit-btn save-btn {{updateActive ? 'anuler delete':'d-none'}}" (click)="delete()" routerLink="../../" routerLinkActive="active">Supprimer  <i class="fa fa-trash" aria-hidden="true"></i></span>
+            <h3>code: <input [disabled]="updateActive" #codeV type="text" [value]="projet.code"></h3>
+            <h3>ref: <input [disabled]="updateActive" #ref type="text" [value]="projet.ref"></h3>
+            <h3>libelle: <input [disabled]="updateActive" #libelle type="text" [value]="projet.libelle"></h3>
+            <h3>avancement: <input [disabled]="updateActive" #avancement type="text" [value]="projet.avancement"></h3>
+            <h3>color: <br>
+                <div class="menu_btn_container d-flex align-items-start flex-wrap" >
+                    <label for="{{c.ref}}" class="menu_btn_box" [ngStyle]="{'background-color' : '#'+c.code}" *ngFor="let c of colors,index as i">
+                        <input type="radio" class="hide-inp"  [id]="c.code" name="vehicle1" value="{{c.ref}}">
+                        <div class="ok" (click)="getColor(c.ref)"></div>
+                    </label>
+                  </div>
+            </h3>
+        </div>
+    </div>
+</div>

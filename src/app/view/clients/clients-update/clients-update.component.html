@@ -1,0 +1,21 @@
+<h1 class="text-center mt-5 pb-5">Bienvenue</h1>
+<button class="mt-5 mx-auto d-block btn btn-outline-light "  (click)="popUpUpdate = !popUpUpdate">Modefier votre info</button>
+<div [ngClass]="{'active ' : popUpUpdate}" class="bg-popup greenBg">
+    <div class="btn" (click)="updateActive = !updateActive"></div>
+    <div class="form">
+        <div class="clr-brd">
+            <div class="close-btn-circle" (click)="popUpUpdate = !popUpUpdate"><i class="fa fa-times" aria-hidden="true"></i></div>
+            <h3>
+                <!-- {{projet.code}} -->
+            </h3>
+        </div>
+        <div class="taches-container">
+            <span class="edit-btn {{updateActive ? 'edit':'anuler'}}" (click)="updateActive= !updateActive">{{updateActive ? 'Edit':'Anuler'}}  <i class="fa fa-pencil" aria-hidden="true"></i></span>
+            <span class="edit-btn save-btn {{updateActive ? 'd-none':''}}" (click)="update(nomV.value,prenomV.value,emailV.value,passwordV.value)">save <i class="fa fa-floppy-o" aria-hidden="true"></i></span>
+            <h3>nom: <input #nomV type="text" [value]="client.nom"></h3>
+            <h3>prenom: <input #prenomV type="text" [value]="client.prenom"></h3>
+            <h3>email: <input #emailV type="text" disabled [value]="client.email"></h3>
+            <h3>password: <input #passwordV type="text" [value]="client.psw"></h3>
+        </div>
+    </div>
+</div>

@@ -1,5 +1,17 @@
-<div class="taches_container">
-    <div class="tache_box">
-        <p>my first tache</p><button><i class="fa fa-pencil"></i></button>
+<div class="taches_container d-flex justify-content-start flex-wrap" >
+    <div class="tache_box" *ngFor="let t of taches,index as i">
+        <div class="p-relative">
+            <!-- <span>{{t.datedebut | date: 'dd/MM/yyyy'}} - {{t.datefin | date: 'dd/MM/yyyy'}}</span> -->
+            <!-- <span>{{dateStyle(t.datedebut)}}</span> -->
+            <span class="span" [ngClass]="{'redBg':t.etat.code === 'À faire',
+            'greenBg':t.etat.code === 'Terminé',
+            'blueBg':t.etat.code === 'En cours'}" >{{t.etat.code}}</span>
+            <h5>{{t.code}} </h5>
+        </div>
+        <p>{{t.libelle}}</p>
+        <button (click)="select(i)" ><i class="fa fa-inbox" aria-hidden="true"></i></button>
     </div>
+    <app-taches-update></app-taches-update>
+    <app-taches-create></app-taches-create>
+    
 </div>

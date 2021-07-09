@@ -2,24 +2,10 @@
     <div class="list-wrapper" *ngFor="let l of lots,index as i">
         <div class="lot_box">
             <h5 class="lot_box-title">{{l.libelle}}</h5>
-            <!-- <p class="lot_box-text">{{l.code}} carts</p> -->
-            <app-taches></app-taches>
+            <!-- <app-taches></app-taches> -->
         </div>
     </div>
     <div class="list-wrapper">
         <app-lots-create></app-lots-create>
     </div>
-    <!-- <div class="list-wrapper">
-        <div class="lot_box">
-            <h5 class="lot_box-title">title1</h5>
-            <p class="lot_box-text">9 carts</p>
-        </div>
-    </div>
-    <div class="list-wrapper">
-        <div class="lot_box">
-            <h5 class="lot_box-title">title2</h5>
-            <p class="lot_box-text">5 carts</p>
-        </div>
-    </div>
- -->
 </div>

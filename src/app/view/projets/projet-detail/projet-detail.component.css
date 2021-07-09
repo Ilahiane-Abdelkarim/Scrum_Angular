@@ -1,0 +1,47 @@
+.projet-props {
+  padding: 0 4px;
+}
+.projet-props li {
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.09);
+  border-radius: 4px;
+  margin: 0 3px;
+  min-height: 36px;
+  padding: 0 6px;
+  color: #fff;
+  transition-duration: 0.3s;
+  cursor: pointer;
+}
+.projet-props li:hover {
+  background-color: rgba(0, 0, 0, 0.17);
+}
+.projet-props li h3,
+.projet-props li h4,
+.projet-props li h5,
+.projet-props li p,
+.projet-props li span {
+  margin-bottom: 0;
+}
+.projet-props li h3 {
+  font-size: 16px;
+  line-height: 16px;
+}
+.projet-props li h4 {
+  font-size: 14px;
+  line-height: 14px;
+}
+.projet-props li h5 {
+  font-size: 12px;
+  line-height: 12px;
+}
+.projet-props li.progress {
+  background-color: rgba(255, 255, 255, 0);
+}
+.projet-props li.progress span {
+  background-color: rgba(255, 255, 255, 0.69);
+  min-height: unset;
+  padding: 4px 5px;
+  border-radius: 4px;
+  color: #313131;
+  display: inline-block;
+}

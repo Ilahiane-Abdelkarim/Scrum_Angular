@@ -1,20 +1,18 @@
 import { Injectable } from '@angular/core';
 import {EtatTache} from '../model/etat-tache.model';
+import {HttpClient} from '@angular/common/http';
+import {environment} from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EtatTacheService {
 
-  private _etatTache : EtatTache;
-  private _etatTaches : Array<EtatTache> = [
-    {id: 1, code:'code 1', libelle: 'EtatTache 1'},
-    {id: 2, code:'code 2', libelle: 'EtatTache 2'},
-    {id: 3, code:'code 3', libelle: 'EtatTache 3'},
-    {id: 4, code:'code 4', libelle: 'EtatTache 4'}
-  ];
+  private _etatTache = new EtatTache();
+  private _etatTaches = new Array<EtatTache>();
+  private url = environment.baseUrl + 'equipetache/'
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
   
   get etatTache(): EtatTache {
     if (this._etatTache == null) {
@@ -44,5 +42,22 @@ export class EtatTacheService {
     cloneEtatTache.code = lot.code;
     cloneEtatTache.libelle = lot.libelle;
     return cloneEtatTache;
+  }
+  public cloneEtatTache2(etatCode: string) {
+    const cloneEtatTache = new EtatTache();
+    cloneEtatTache.code = etatCode;
+    return cloneEtatTache;
+  }
+
+  public findAll(){
+    this.http.get<Array<EtatTache>>(this.url).subscribe(
+      data=>{
+        this.etatTaches =data;
+      }
+    );
+  }
+  public changeEtat(et){
+    this.etatTache.code =et;
+    console.log(this.etatTache.code)
   }
 }
